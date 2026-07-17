@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Section from "../components/Section";
-import AchievementCard from "../components/AchievementCard";
+import Section from "../Components/Section";
+import AchievementCard from "../Components/AchievementCard";
 import { HiOutlineCheckBadge } from "react-icons/hi2";
 import { achievements } from "../data/achievements";
 

@@ -99,8 +99,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Section from "../components/Section";
-import ExperienceCard from "../components/ExperienceCard";
+import Section from "../Components/Section";
+import ExperienceCard from "../Components/ExperienceCard";
 import { HiOutlineBriefcase } from "react-icons/hi";
 import { experience } from "../data/experience";
 

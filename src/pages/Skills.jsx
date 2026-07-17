@@ -145,8 +145,8 @@
 
 import { useEffect, useState } from "react";
 import { HiOutlineCode } from "react-icons/hi";
-import Section from "../components/Section";
-import SkillBadge from "../components/SkillBadge";
+import Section from "../Components/Section";
+import SkillBadge from "../Components/SkillBadge";
 import { skills } from "../data/skills";
 
 const filters = [
