@@ -100,7 +100,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Section from "../Components/Section";
-import ExperienceCard from "../Components/ExperienceCard";
+import ExperienceCard from "../Components/Experiencecard";
 import { HiOutlineBriefcase } from "react-icons/hi";
 import { experience } from "../data/experience";
 
