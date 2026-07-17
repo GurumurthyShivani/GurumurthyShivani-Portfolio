@@ -1,6 +1,6 @@
 export const education = [
   {
-    school: 'CVR College Of eEngineering',
+    school: 'CVR College Of Engineering',
     title: 'Bachelor of Technology (B.Tech)',
     field: 'Department Of Information Technology',
     startdate: 'Aug 2019',
