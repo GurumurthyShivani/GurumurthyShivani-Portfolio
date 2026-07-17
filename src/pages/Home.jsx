@@ -1,3 +1,4 @@
+// import { useEffect, useState } from "react";
 // import { motion } from "framer-motion";
 // import { TypeAnimation } from "react-type-animation";
 
@@ -13,20 +14,50 @@
 // import profile from "../assets/profile-placeholder.svg.jpeg";
 
 // export default function Home() {
+//   const [theme, setTheme] = useState("dark");
+
+//   useEffect(() => {
+//     const root = document.documentElement;
+
+//     // Pick up whatever the Navbar already set
+//     setTheme(root.getAttribute("data-theme") || localStorage.getItem("theme") || "dark");
+
+//     // Stay in sync whenever the Navbar toggles the theme
+//     const observer = new MutationObserver(() => {
+//       setTheme(root.getAttribute("data-theme") || "dark");
+//     });
+
+//     observer.observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+
+//     return () => observer.disconnect();
+//   }, []);
+
+//   const isDark = theme === "dark";
+
 //   return (
 //     <section
-//     id="home"
-//     className="relative min-h-screen bg-[#050816] scroll-mt-24"
-//   >
+//       id="home"
+//       className={`relative min-h-screen scroll-mt-24 transition-colors duration-500 ${
+//         isDark ? "bg-[#050816]" : "bg-white"
+//       }`}
+//     >
 //       {/* Background Glow */}
 
-//       <div className="absolute left-20 top-32 h-72 w-72 rounded-full bg-violet-700/20 blur-[140px]" />
+//       <div
+//         className={`absolute left-4 top-24 h-40 w-40 rounded-full blur-[90px] sm:left-20 sm:top-32 sm:h-72 sm:w-72 sm:blur-[140px] ${
+//           isDark ? "bg-violet-700/20" : "bg-amber-300/30"
+//         }`}
+//       />
 
-//       <div className="absolute right-20 bottom-20 h-80 w-80 rounded-full bg-cyan-500/20 blur-[160px]" />
+//       <div
+//         className={`absolute right-4 bottom-10 h-48 w-48 rounded-full blur-[100px] sm:right-20 sm:bottom-20 sm:h-80 sm:w-80 sm:blur-[160px] ${
+//           isDark ? "bg-cyan-500/20" : "bg-indigo-300/30"
+//         }`}
+//       />
 
 //       {/* Main Container */}
 
-//       <div className="mx-auto flex min-h-screen max-w-7xl items-center justify-between px-8 pt-20">
+//       <div className="mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-14 px-6 pt-28 pb-16 sm:flex-row sm:justify-between sm:gap-8 sm:px-8 sm:pt-20 sm:pb-0">
 
 //         {/* LEFT */}
 
@@ -34,22 +65,28 @@
 //           initial={{ opacity: 0, x: -70 }}
 //           animate={{ opacity: 1, x: 0 }}
 //           transition={{ duration: 1 }}
-//           className="max-w-2xl"
+//           className="max-w-2xl text-center sm:text-left"
 //         >
 
 //           {/* Greeting */}
 
-//           <p className="mb-3 text-xl text-slate-300">
-//             Hi, I'm 👋
+//           <p className={`mb-3 lg:text-left text-lg sm:text-center sm:text-xl  ${isDark ? "text-slate-300" : "text-slate-500"}`}>
+//             HI, I'M 👋
 //           </p>
 
 //           {/* Name */}
 
-//           <h1 className="mb-5 text-6xl font-extrabold leading-tight">
+//           <h1 className="mb-4 lg:text-left font-extrabold leading-tight sm:text-5xl sm:text-center lg:text-6xl">
 
-//             <span className="bg-gradient-to-r from-violet-500 via-cyan-400 to-pink-500 bg-clip-text text-transparent">
+//             <span
+//               className={`bg-gradient-to-r bg-clip-text text-transparent ${
+//                 isDark
+//                   ? "from-violet-500 via-cyan-400 to-pink-500"
+//                   : "from-indigo-700 via-teal-800 to-blue-500"
+//               }`}
+//             >
 
-//               Shivani Gurumurthy
+//               SHIVANI GURUMURTHY
 
 //             </span>
 
@@ -57,115 +94,136 @@
 
 //           {/* Typewriter */}
 
-//           <h2 className="mb-8 text-3xl font-semibold text-white">
+//           <h3
+//             className={`mb-8 bg-gradient-to-r bg-clip-text text-xl font-semibold text-transparent lg:text-left sm:text-center sm:text-2xl lg:text-3xl ${
+//               isDark
+//                 ? "from-cyan-300 via-violet-400 to-pink-400"
+//                 : "from-indigo-600 via-fuchsia-600 to-amber-500"
+//             }`}
+//           >
 
 //             A{" "}
 
 //             <TypeAnimation
 //               sequence={[
-//                 "Java Developer",
+//                 "JAVA DEVELOPER",
 //                 1800,
-//                 "Software Developer",
+//                 "SOFTWARE DEVELOPER",
 //                 1800,
-//                 "Full-Stack Engineer",
+//                 "FULL-STACK ENGINEER",
 //                 1800,
 //               ]}
 //               wrapper="span"
 //               speed={45}
 //               repeat={Infinity}
-//               className="text-cyan-400"
 //             />
 
-//           </h2>
+//           </h3> 
+
+          
 
 //           {/* Description */}
 
-//           <p className="mb-10 text-lg leading-8 text-slate-400">
+//           <p className={`mb-10 lg:text-left text-base leading-7 sm:text-center sm:text-lg sm:leading-8 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
 
-//             Passionate Java Full Stack Developer with one year of professional
-//             experience at Cognizant. I enjoy building scalable backend systems
-//             and responsive web applications using Java, React.js, SQL and
-//             modern web technologies. Currently looking for Software Engineer
-//             and Java Full Stack Developer opportunities.
+//             Fascinated by the invisible logic that powers everything around us, I channel that curiosity into building systems that don't just function — they transform ideas into experiences people remember.Every project is a chance to turn that fascination into something real, something people actually feel.
+
 
 //           </p>
 
 //           {/* Socials */}
 
-//           <div className="mb-10 flex items-center gap-6">
+//           <div className="mt-4 mb-10 flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-6">
 
 //             <a
-//               href="https://linkedin.com/"
+//               href="https://www.linkedin.com/in/shivanigurumurthy/"
 //               target="_blank"
 //               rel="noreferrer"
 //               className="group"
 //             >
 //               <FaLinkedin
 //                 size={28}
-//                 className="text-slate-300 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-cyan-400"
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-cyan-400 ${
+//                   isDark ? "text-slate-300" : "text-slate-500"
+//                 }`}
 //               />
 //             </a>
 
 //             <a
-//               href="https://github.com/"
+//               href="https://github.com/GurumurthyShivani"
 //               target="_blank"
 //               rel="noreferrer"
 //               className="group"
 //             >
 //               <FaGithub
 //                 size={28}
-//                 className="text-slate-300 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-violet-400"
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-violet-400 ${
+//                   isDark ? "text-slate-300" : "text-slate-500"
+//                 }`}
 //               />
 //             </a>
 
 //             <a
-//               href="https://twitter.com/"
+//               href="https://x.com/Neethu_2910"
 //               target="_blank"
 //               rel="noreferrer"
 //               className="group"
 //             >
 //               <FaXTwitter
 //                 size={28}
-//                 className="text-slate-300 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-white"
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 ${
+//                   isDark
+//                     ? "text-slate-300 group-hover:text-white"
+//                     : "text-slate-500 group-hover:text-slate-900"
+//                 }`}
 //               />
 //             </a>
 
 //             <a
-//               href="mailto:yourmail@gmail.com"
+//               href="mailto:shivanigurumurthy10@gmail.com"
 //               className="group"
 //             >
 //               <MdEmail
 //                 size={31}
-//                 className="text-slate-300 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-pink-400"
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-pink-400 ${
+//                   isDark ? "text-slate-300" : "text-slate-500"
+//                 }`}
 //               />
 //             </a>
 
 //             {/* Resume */}
 
 //             <a
-//               href="/resume.pdf"
-//               download
-//               className="
-//               ml-6
+//             href="https://drive.google.com/uc?export=download&id=16JJMIQ82lnFPBYhBXl61vy-CglvKfMfo"
+//                download="Shivani_Gurumurthy_Resume.pdf"
+//               className={`
 //               flex
 //               items-center
 //               gap-3
-//               rounded-full
+//               rounded-2xl
 //               border
-//               border-violet-500
-//               bg-gradient-to-r
-//               from-violet-600
-//               via-cyan-500
-//               to-pink-500
-//               px-6
-//               py-3
+//               px-4
+//               py-2.5
+//               text-sm
 //               font-semibold
-//               text-white
 //               transition-all
 //               duration-300
-//               hover:shadow-[0_0_25px_#8b5cf6]
 //               hover:scale-105
-//               "
+//               bg-gradient-to-r
+//               bg-[length:200%_100%]
+//               bg-left
+//               hover:bg-right
+//               sm:ml-2
+//               sm:px-6
+//               sm:py-3
+//               sm:text-base
+//               ${
+//                 isDark
+//                   ? //"border-amber-300/50 from-amber-200 via-yellow-400 to-amber-500 text-slate-900 hover:shadow-[0_0_25px_rgba(245,158,11,0.45)]"
+//                   "border-indigo-900/20 from-slate-800 via-indigo-700 to-slate-900 text-white hover:shadow-[0_0_25px_rgba(49,46,129,0.35)]"
+//                   : "border-cyan-900/30 from-cyan-950 via-teal-600 to-cyan-950 text-white shadow-cyan-500/20 hover:shadow-cyan-500/40"
+//               }
+//               `}
 //             >
 //               Resume
 
@@ -183,18 +241,22 @@
 //           initial={{ opacity: 0, x: 70 }}
 //           animate={{ opacity: 1, x: 0 }}
 //           transition={{ duration: 1 }}
-//           className="relative"
+//           className="relative shrink-0"
 //         >
 
 //           {/* Glow */}
 
-//           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-600 via-cyan-400 to-pink-500 blur-3xl opacity-30" />
+//           <div
+//             className={`absolute inset-0 rounded-full blur-2xl opacity-30 bg-gradient-to-r sm:blur-3xl ${
+//               isDark
+//                 ? "from-violet-600 via-cyan-400 to-pink-500"
+//                 : "from-indigo-600 via-fuchsia-500 to-amber-400"
+//             }`}
+//           />
 
 //           {/* Floating Image */}
 
-//           <motion.img
-//             src={profile}
-//             alt="Profile"
+//           <motion.div
 //             animate={{
 //               y: [0, -18, 0],
 //             }}
@@ -203,17 +265,27 @@
 //               duration: 3,
 //               ease: "easeInOut",
 //             }}
-//             className="
+//             className={`
 //               relative
-//               h-[420px]
-//               w-[420px]
 //               rounded-full
-//               border-4
-//               border-cyan-400
-//               object-cover
-//               shadow-[0_0_50px_rgba(6,182,212,0.3)]
-//             "
-//           />
+//               bg-gradient-to-r
+//               p-[4px]
+//               sm:p-[5px]
+//               ${
+//                 isDark
+//                   ? "from-violet-500 via-fuchsia-500 to-cyan-400 shadow-[0_0_50px_rgba(168,85,247,0.3)]"
+//                   : "from-teal-400 via-cyan-500 to-indigo-500 shadow-[0_0_50px_rgba(79,70,229,0.25)]"
+//               }
+//             `}
+//           >
+//             <img
+//               src={profile}
+//               alt="Profile"
+//               className={`h-[200px] w-[200px] rounded-full object-cover sm:h-[280px] sm:w-[280px] lg:h-[420px] lg:w-[420px] ${
+//                 isDark ? "bg-[#050816]" : "bg-[#FBF9F5]"
+//               }`}
+//             />
+//           </motion.div>
 
 //         </motion.div>
 
@@ -221,7 +293,6 @@
 //     </section>
 //   );
 // }
-
 
 // import { useEffect, useState } from "react";
 // import { motion } from "framer-motion";
@@ -263,26 +334,26 @@
 //     <section
 //       id="home"
 //       className={`relative min-h-screen scroll-mt-24 transition-colors duration-500 ${
-//         isDark ? "bg-[#050816]" : "bg-gradient-to-b from-[#FBF9F5] to-[#F3EEE6]"
+//         isDark ? "bg-[#050816]" : "bg-white"
 //       }`}
 //     >
 //       {/* Background Glow */}
 
 //       <div
-//         className={`absolute left-20 top-32 h-72 w-72 rounded-full blur-[140px] ${
+//         className={`absolute left-4 top-24 h-32 w-32 rounded-full blur-[80px] sm:left-12 sm:top-28 sm:h-56 sm:w-56 sm:blur-[110px] lg:left-20 lg:top-32 lg:h-72 lg:w-72 lg:blur-[140px] ${
 //           isDark ? "bg-violet-700/20" : "bg-amber-300/30"
 //         }`}
 //       />
 
 //       <div
-//         className={`absolute right-20 bottom-20 h-80 w-80 rounded-full blur-[160px] ${
+//         className={`absolute right-4 bottom-10 h-40 w-40 rounded-full blur-[90px] sm:right-12 sm:bottom-16 sm:h-64 sm:w-64 sm:blur-[130px] lg:right-20 lg:bottom-20 lg:h-80 lg:w-80 lg:blur-[160px] ${
 //           isDark ? "bg-cyan-500/20" : "bg-indigo-300/30"
 //         }`}
 //       />
 
 //       {/* Main Container */}
 
-//       <div className="mx-auto flex min-h-screen max-w-7xl items-center justify-between px-8 pt-20">
+//       <div className="mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-10 px-5 pt-24 pb-14 sm:gap-14 sm:px-6 sm:pt-28 sm:pb-16 md:flex-row md:justify-between md:gap-8 md:px-8 md:pt-20 md:pb-0">
 
 //         {/* LEFT */}
 
@@ -290,28 +361,28 @@
 //           initial={{ opacity: 0, x: -70 }}
 //           animate={{ opacity: 1, x: 0 }}
 //           transition={{ duration: 1 }}
-//           className="max-w-2xl"
+//           className="max-w-2xl text-center md:text-left"
 //         >
 
 //           {/* Greeting */}
 
-//           <p className={`mb-3 text-xl ${isDark ? "text-slate-300" : "text-slate-500"}`}>
-//             Hi, I'm 👋
+//           <p className={`mb-3 text-base sm:text-lg md:text-xl lg:text-left md:text-left sm-text-center  ${isDark ? "text-slate-300" : "text-slate-500"}`}>
+//             HI, I'M 👋
 //           </p>
 
 //           {/* Name */}
 
-//           <h1 className="mb-5 text-6xl font-extrabold leading-tight">
+//           <h1 className="mb-4 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl lg:text-left md:text-left sm-text-center">
 
 //             <span
 //               className={`bg-gradient-to-r bg-clip-text text-transparent ${
 //                 isDark
 //                   ? "from-violet-500 via-cyan-400 to-pink-500"
-//                   : "from-indigo-700 via-fuchsia-600 to-amber-500"
+//                   : "from-indigo-700 via-teal-800 to-blue-500"
 //               }`}
 //             >
 
-//               Shivani Gurumurthy
+//               SHIVANI GURUMURTHY
 
 //             </span>
 
@@ -319,8 +390,8 @@
 
 //           {/* Typewriter */}
 
-//           <h2
-//             className={`mb-8 inline-block bg-gradient-to-r bg-clip-text text-3xl font-semibold text-transparent ${
+//           <h3
+//             className={`mb-8 bg-gradient-to-r bg-clip-text text-lg font-semibold text-transparent sm:text-xl md:text-2xl lg:text-3xl lg:text-left md:text-left sm-text-center ${
 //               isDark
 //                 ? "from-cyan-300 via-violet-400 to-pink-400"
 //                 : "from-indigo-600 via-fuchsia-600 to-amber-500"
@@ -331,11 +402,11 @@
 
 //             <TypeAnimation
 //               sequence={[
-//                 "Java Developer",
+//                 "JAVA DEVELOPER",
 //                 1800,
-//                 "Software Developer",
+//                 "SOFTWARE DEVELOPER",
 //                 1800,
-//                 "Full-Stack Engineer",
+//                 "FULL-STACK ENGINEER",
 //                 1800,
 //               ]}
 //               wrapper="span"
@@ -343,61 +414,59 @@
 //               repeat={Infinity}
 //             />
 
-//           </h2>
+//           </h3> 
+
+          
 
 //           {/* Description */}
 
-//           <p className={`mb-10 text-lg leading-8 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+//           <p className={`mb-10 text-sm leading-6 sm:text-base sm:leading-7 md:text-lg md:leading-8 lg:text-left md:text-left sm-text-center ${isDark ? "text-slate-400" : "text-slate-600"}`}>
 
-//             Passionate Java Full Stack Developer with one year of professional
-//             experience at Cognizant. I enjoy building scalable backend systems
-//             and responsive web applications using Java, React.js, SQL and
-//             modern web technologies. Currently looking for Software Engineer
-//             and Java Full Stack Developer opportunities.
+//             Fascinated by the invisible logic that powers everything around us, I channel that curiosity into building systems that don't just function — they transform ideas into experiences people remember. Every project is a chance to turn that fascination into something real, something people actually feel.
 
 //           </p>
 
 //           {/* Socials */}
 
-//           <div className="mb-10 flex items-center gap-6">
+//           <div className="mt-4 mb-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5 md:justify-start">
 
 //             <a
-//               href="https://linkedin.com/"
+//               href="https://www.linkedin.com/in/shivanigurumurthy/"
 //               target="_blank"
 //               rel="noreferrer"
 //               className="group"
 //             >
 //               <FaLinkedin
-//                 size={28}
-//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-cyan-400 ${
+//                 size={26}
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-cyan-400 sm:h-7 sm:w-7 ${
 //                   isDark ? "text-slate-300" : "text-slate-500"
 //                 }`}
 //               />
 //             </a>
 
 //             <a
-//               href="https://github.com/"
+//               href="https://github.com/GurumurthyShivani"
 //               target="_blank"
 //               rel="noreferrer"
 //               className="group"
 //             >
 //               <FaGithub
-//                 size={28}
-//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-violet-400 ${
+//                 size={26}
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-violet-400 sm:h-7 sm:w-7 ${
 //                   isDark ? "text-slate-300" : "text-slate-500"
 //                 }`}
 //               />
 //             </a>
 
 //             <a
-//               href="https://twitter.com/"
+//               href="https://x.com/Neethu_2910"
 //               target="_blank"
 //               rel="noreferrer"
 //               className="group"
 //             >
 //               <FaXTwitter
-//                 size={28}
-//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 ${
+//                 size={26}
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 sm:h-7 sm:w-7 ${
 //                   isDark
 //                     ? "text-slate-300 group-hover:text-white"
 //                     : "text-slate-500 group-hover:text-slate-900"
@@ -406,12 +475,12 @@
 //             </a>
 
 //             <a
-//               href="mailto:yourmail@gmail.com"
+//               href="mailto:shivanigurumurthy10@gmail.com"
 //               className="group"
 //             >
 //               <MdEmail
-//                 size={31}
-//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-pink-400 ${
+//                 size={29}
+//                 className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-pink-400 sm:h-8 sm:w-8 ${
 //                   isDark ? "text-slate-300" : "text-slate-500"
 //                 }`}
 //               />
@@ -420,17 +489,17 @@
 //             {/* Resume */}
 
 //             <a
-//               href="/resume.pdf"
-//               download
+//             href="https://drive.google.com/uc?export=download&id=16JJMIQ82lnFPBYhBXl61vy-CglvKfMfo"
+//                download="Shivani_Gurumurthy_Resume.pdf"
 //               className={`
-//               ml-6
 //               flex
 //               items-center
-//               gap-3
-//               rounded-full
+//               gap-2
+//               rounded-2xl
 //               border
-//               px-6
-//               py-3
+//               px-4
+//               py-2
+//               text-xs
 //               font-semibold
 //               transition-all
 //               duration-300
@@ -439,16 +508,24 @@
 //               bg-[length:200%_100%]
 //               bg-left
 //               hover:bg-right
+//               sm:gap-3
+//               sm:px-5
+//               sm:py-2.5
+//               sm:text-sm
+//               md:ml-2
+//               md:px-6
+//               md:py-3
+//               md:text-base
 //               ${
 //                 isDark
-//                   ? "border-amber-300/50 from-amber-200 via-yellow-400 to-amber-500 text-slate-900 hover:shadow-[0_0_25px_rgba(245,158,11,0.45)]"
-//                   : "border-indigo-900/20 from-slate-800 via-indigo-700 to-slate-900 text-amber-200 hover:shadow-[0_0_25px_rgba(49,46,129,0.35)]"
+//                   ? "border-indigo-900/20 from-slate-800 via-indigo-700 to-slate-900 text-white hover:shadow-[0_0_25px_rgba(49,46,129,0.35)]"
+//                   : "border-cyan-900/30 from-cyan-950 via-teal-600 to-cyan-950 text-white shadow-cyan-500/20 hover:shadow-cyan-500/40"
 //               }
 //               `}
 //             >
 //               Resume
 
-//               <HiArrowDownTray size={20} />
+//               <HiArrowDownTray size={18} />
 
 //             </a>
 
@@ -462,13 +539,13 @@
 //           initial={{ opacity: 0, x: 70 }}
 //           animate={{ opacity: 1, x: 0 }}
 //           transition={{ duration: 1 }}
-//           className="relative"
+//           className="relative shrink-0"
 //         >
 
 //           {/* Glow */}
 
 //           <div
-//             className={`absolute inset-0 rounded-full blur-3xl opacity-30 bg-gradient-to-r ${
+//             className={`absolute inset-0 rounded-full blur-2xl opacity-30 bg-gradient-to-r sm:blur-3xl ${
 //               isDark
 //                 ? "from-violet-600 via-cyan-400 to-pink-500"
 //                 : "from-indigo-600 via-fuchsia-500 to-amber-400"
@@ -490,7 +567,9 @@
 //               relative
 //               rounded-full
 //               bg-gradient-to-r
-//               p-[5px]
+//               p-[3px]
+//               sm:p-[4px]
+//               md:p-[5px]
 //               ${
 //                 isDark
 //                   ? "from-violet-500 via-fuchsia-500 to-cyan-400 shadow-[0_0_50px_rgba(168,85,247,0.3)]"
@@ -501,7 +580,7 @@
 //             <img
 //               src={profile}
 //               alt="Profile"
-//               className={`h-[420px] w-[420px] rounded-full object-cover ${
+//               className={`h-[160px] w-[160px] rounded-full object-cover sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[420px] lg:w-[420px] ${
 //                 isDark ? "bg-[#050816]" : "bg-[#FBF9F5]"
 //               }`}
 //             />
@@ -513,7 +592,6 @@
 //     </section>
 //   );
 // }
-
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -561,20 +639,20 @@ export default function Home() {
       {/* Background Glow */}
 
       <div
-        className={`absolute left-4 top-24 h-40 w-40 rounded-full blur-[90px] sm:left-20 sm:top-32 sm:h-72 sm:w-72 sm:blur-[140px] ${
+        className={`pointer-events-none absolute left-4 top-24 h-32 w-32 rounded-full blur-[80px] sm:left-12 sm:top-28 sm:h-56 sm:w-56 sm:blur-[110px] lg:left-20 lg:top-32 lg:h-72 lg:w-72 lg:blur-[140px] ${
           isDark ? "bg-violet-700/20" : "bg-amber-300/30"
         }`}
       />
 
       <div
-        className={`absolute right-4 bottom-10 h-48 w-48 rounded-full blur-[100px] sm:right-20 sm:bottom-20 sm:h-80 sm:w-80 sm:blur-[160px] ${
+        className={`pointer-events-none absolute right-4 bottom-10 h-40 w-40 rounded-full blur-[90px] sm:right-12 sm:bottom-16 sm:h-64 sm:w-64 sm:blur-[130px] lg:right-20 lg:bottom-20 lg:h-80 lg:w-80 lg:blur-[160px] ${
           isDark ? "bg-cyan-500/20" : "bg-indigo-300/30"
         }`}
       />
 
       {/* Main Container */}
 
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-14 px-6 pt-28 pb-16 sm:flex-row sm:justify-between sm:gap-8 sm:px-8 sm:pt-20 sm:pb-0">
+      <div className="mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-10 px-5 pt-24 pb-14 sm:gap-14 sm:px-6 sm:pt-28 sm:pb-16 md:flex-row md:justify-between md:gap-8 md:px-8 md:pt-20 md:pb-0">
 
         {/* LEFT */}
 
@@ -582,18 +660,18 @@ export default function Home() {
           initial={{ opacity: 0, x: -70 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="max-w-2xl text-center sm:text-left"
+          className="max-w-2xl text-center md:text-left"
         >
 
           {/* Greeting */}
 
-          <p className={`mb-3 lg:text-left text-lg sm:text-center sm:text-xl  ${isDark ? "text-slate-300" : "text-slate-500"}`}>
+          <p className={`mb-3 text-base sm:text-lg md:text-xl lg:text-left md:text-left sm-text-center ${isDark ? "text-slate-300" : "text-slate-500"}`}>
             HI, I'M 👋
           </p>
 
           {/* Name */}
 
-          <h1 className="mb-4 lg:text-left font-extrabold leading-tight sm:text-5xl sm:text-center lg:text-6xl">
+          <h1 className="mb-4 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl lg:text-left md:text-left sm-text-center">
 
             <span
               className={`bg-gradient-to-r bg-clip-text text-transparent ${
@@ -612,7 +690,7 @@ export default function Home() {
           {/* Typewriter */}
 
           <h3
-            className={`mb-8 bg-gradient-to-r bg-clip-text text-xl font-semibold text-transparent lg:text-left sm:text-center sm:text-2xl lg:text-3xl ${
+            className={`mb-8 bg-gradient-to-r bg-clip-text text-lg font-semibold text-transparent sm:text-xl md:text-2xl lg:text-3xl lg:text-left md:text-left sm-text-center ${
               isDark
                 ? "from-cyan-300 via-violet-400 to-pink-400"
                 : "from-indigo-600 via-fuchsia-600 to-amber-500"
@@ -641,26 +719,25 @@ export default function Home() {
 
           {/* Description */}
 
-          <p className={`mb-10 lg:text-left text-base leading-7 sm:text-center sm:text-lg sm:leading-8 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+          <p className={`mb-10 text-sm leading-6 sm:text-base sm:leading-7 md:text-lg md:leading-8 lg:text-left md:text-left sm-text-center ${isDark ? "text-slate-400" : "text-slate-600"}`}>
 
-            Fascinated by the invisible logic that powers everything around us, I channel that curiosity into building systems that don't just function — they transform ideas into experiences people remember.Every project is a chance to turn that fascination into something real, something people actually feel.
-
+            Fascinated by the invisible logic that powers everything around us, I channel that curiosity into building systems that don't just function — they transform ideas into experiences people remember. Every project is a chance to turn that fascination into something real, something people actually feel.
 
           </p>
 
           {/* Socials */}
 
-          <div className="mt-4 mb-10 flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-6">
+          <div className="mt-4 mb-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5 md:justify-start">
 
             <a
               href="https://www.linkedin.com/in/shivanigurumurthy/"
               target="_blank"
               rel="noreferrer"
-              className="group"
+              aria-label="LinkedIn"
+              className="group relative z-10 -m-2 p-2"
             >
               <FaLinkedin
-                size={28}
-                className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-cyan-400 ${
+                className={`h-6 w-6 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-cyan-400 sm:h-7 sm:w-7 ${
                   isDark ? "text-slate-300" : "text-slate-500"
                 }`}
               />
@@ -670,11 +747,11 @@ export default function Home() {
               href="https://github.com/GurumurthyShivani"
               target="_blank"
               rel="noreferrer"
-              className="group"
+              aria-label="GitHub"
+              className="group relative z-10 -m-2 p-2"
             >
               <FaGithub
-                size={28}
-                className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-violet-400 ${
+                className={`h-6 w-6 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-violet-400 sm:h-7 sm:w-7 ${
                   isDark ? "text-slate-300" : "text-slate-500"
                 }`}
               />
@@ -684,11 +761,11 @@ export default function Home() {
               href="https://x.com/Neethu_2910"
               target="_blank"
               rel="noreferrer"
-              className="group"
+              aria-label="X (Twitter)"
+              className="group relative z-10 -m-2 p-2"
             >
               <FaXTwitter
-                size={28}
-                className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 ${
+                className={`h-6 w-6 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 sm:h-7 sm:w-7 ${
                   isDark
                     ? "text-slate-300 group-hover:text-white"
                     : "text-slate-500 group-hover:text-slate-900"
@@ -698,11 +775,11 @@ export default function Home() {
 
             <a
               href="mailto:shivanigurumurthy10@gmail.com"
-              className="group"
+              aria-label="Email"
+              className="group relative z-10 -m-2 p-2"
             >
               <MdEmail
-                size={31}
-                className={`transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-pink-400 ${
+                className={`h-7 w-7 transition duration-300 group-hover:-translate-y-1 group-hover:scale-125 group-hover:text-pink-400 sm:h-8 sm:w-8 ${
                   isDark ? "text-slate-300" : "text-slate-500"
                 }`}
               />
@@ -712,16 +789,20 @@ export default function Home() {
 
             <a
             href="https://drive.google.com/uc?export=download&id=16JJMIQ82lnFPBYhBXl61vy-CglvKfMfo"
+               target="_blank"
+               rel="noreferrer"
                download="Shivani_Gurumurthy_Resume.pdf"
               className={`
+              relative
+              z-10
               flex
               items-center
-              gap-3
+              gap-2
               rounded-2xl
               border
               px-4
-              py-2.5
-              text-sm
+              py-2
+              text-xs
               font-semibold
               transition-all
               duration-300
@@ -730,21 +811,24 @@ export default function Home() {
               bg-[length:200%_100%]
               bg-left
               hover:bg-right
-              sm:ml-2
-              sm:px-6
-              sm:py-3
-              sm:text-base
+              sm:gap-3
+              sm:px-5
+              sm:py-2.5
+              sm:text-sm
+              md:ml-2
+              md:px-6
+              md:py-3
+              md:text-base
               ${
                 isDark
-                  ? //"border-amber-300/50 from-amber-200 via-yellow-400 to-amber-500 text-slate-900 hover:shadow-[0_0_25px_rgba(245,158,11,0.45)]"
-                  "border-indigo-900/20 from-slate-800 via-indigo-700 to-slate-900 text-white hover:shadow-[0_0_25px_rgba(49,46,129,0.35)]"
+                  ? "border-indigo-900/20 from-slate-800 via-indigo-700 to-slate-900 text-white hover:shadow-[0_0_25px_rgba(49,46,129,0.35)]"
                   : "border-cyan-900/30 from-cyan-950 via-teal-600 to-cyan-950 text-white shadow-cyan-500/20 hover:shadow-cyan-500/40"
               }
               `}
             >
               Resume
 
-              <HiArrowDownTray size={20} />
+              <HiArrowDownTray size={18} />
 
             </a>
 
@@ -764,7 +848,7 @@ export default function Home() {
           {/* Glow */}
 
           <div
-            className={`absolute inset-0 rounded-full blur-2xl opacity-30 bg-gradient-to-r sm:blur-3xl ${
+            className={`pointer-events-none absolute inset-0 rounded-full blur-2xl opacity-30 bg-gradient-to-r sm:blur-3xl ${
               isDark
                 ? "from-violet-600 via-cyan-400 to-pink-500"
                 : "from-indigo-600 via-fuchsia-500 to-amber-400"
@@ -786,8 +870,9 @@ export default function Home() {
               relative
               rounded-full
               bg-gradient-to-r
-              p-[4px]
-              sm:p-[5px]
+              p-[3px]
+              sm:p-[4px]
+              md:p-[5px]
               ${
                 isDark
                   ? "from-violet-500 via-fuchsia-500 to-cyan-400 shadow-[0_0_50px_rgba(168,85,247,0.3)]"
@@ -798,7 +883,7 @@ export default function Home() {
             <img
               src={profile}
               alt="Profile"
-              className={`h-[200px] w-[200px] rounded-full object-cover sm:h-[280px] sm:w-[280px] lg:h-[420px] lg:w-[420px] ${
+              className={`h-[160px] w-[160px] rounded-full object-cover sm:h-[220px] sm:w-[220px] md:h-[280px] md:w-[280px] lg:h-[420px] lg:w-[420px] ${
                 isDark ? "bg-[#050816]" : "bg-[#FBF9F5]"
               }`}
             />
