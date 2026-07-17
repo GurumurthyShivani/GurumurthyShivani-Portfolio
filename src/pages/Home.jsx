@@ -671,7 +671,7 @@ export default function Home() {
 
           {/* Name */}
 
-          <h1 className="mb-4 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl lg:text-left md:text-left sm-text-center">
+          <h1 className="mb-4 text-3xl font-extrabold leading-tight sm:text-3xl md:text-5xl lg:text-6xl lg:text-left md:text-left sm-text-center">
 
             <span
               className={`bg-gradient-to-r bg-clip-text text-transparent ${
