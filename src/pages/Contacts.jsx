@@ -252,7 +252,7 @@ export default function Contact() {
 
           <div
             className={`
-              rounded-3xl border p-5 backdrop-blur-2xl sm:p-8
+              rounded-3xl border p-5 backdrop-blur-2xl sm:p-6
               transition-all duration-700 ease-out
               ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-[0.98]"}
               ${
