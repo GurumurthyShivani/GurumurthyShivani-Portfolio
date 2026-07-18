@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   const inputClasses = `
-    mt-1.5 w-full rounded-xl border px-4 py-2.5 text-sm outline-none backdrop-blur-xl
+    mt-1 sm:mt-1.5 w-full rounded-xl border px-4 py-2.5 text-sm outline-none backdrop-blur-xl
     transition-all duration-300 ease-out
     focus:scale-[1.01] focus:shadow-lg
     ${
@@ -172,7 +172,7 @@ export default function Contact() {
                  }`}
                  style={revealStyle(360)}
                >
-                <p className={`w-full text-sm lg:text-left md:text-left ${isDark ? "text-slate-400" : "text-slate-600"}`}>Follow me on Social Media</p>
+                <p className={`w-full text-center text-sm sm:text-left ${isDark ? "text-slate-400" : "text-slate-600"}`}>Follow me on Social Media</p>
                 <a
                   href="https://www.linkedin.com/in/shivanigurumurthy/"
                   target="_blank"
@@ -252,7 +252,7 @@ export default function Contact() {
 
           <div
             className={`
-              rounded-3xl border p-5 backdrop-blur-2xl sm:p-6
+              rounded-3xl border p-4 backdrop-blur-2xl sm:p-8
               transition-all duration-700 ease-out
               ${mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-[0.98]"}
               ${
@@ -263,10 +263,10 @@ export default function Contact() {
             `}
             style={revealStyle(180)}
           >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
 
               <div>
-                <label className={`text-xs mb-2 font-semibold uppercase tracking-wide ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                <label className={`text-xs mb-1.5 sm:mb-2 font-semibold uppercase tracking-wide ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                   Name
                 </label>
                 <input
@@ -281,7 +281,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className={`text-xs mb-2 font-semibold uppercase tracking-wide ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                <label className={`text-xs mb-1.5 sm:mb-2 font-semibold uppercase tracking-wide ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                   Email
                 </label>
                 <input
@@ -296,7 +296,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className={`text-xs mb-2 font-semibold uppercase tracking-wide ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                <label className={`text-xs mb-1.5 sm:mb-2 font-semibold uppercase tracking-wide ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                   Message
                 </label>
                 <textarea
