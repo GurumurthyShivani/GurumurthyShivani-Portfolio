@@ -2,6 +2,7 @@ import smartTechImg from "../assets/projects/smarttech.png";
 import globeTrekkerImg from "../assets/projects/globetrekker.png";
 import portfolioImg from "../assets/projects/portfolio.png";
 import chatbotImg from "../assets/projects/chatbot.webp";
+import netflixImg from "../assets/projects/netflixlandpage.png"
 
 
 const PROJECTS = [
@@ -15,7 +16,7 @@ const PROJECTS = [
     ],
     stack: ["Java", "JSP", "Servlets", "JDBC", "Oracle SQL", "HTML", "CSS", "Bootstrap"],
     github: "https://github.com/GurumurthyShivani/SmartTech-E-Commerce-Application-",
-    demo: "", // Leave empty if not deployed
+    demo: "http://localhost:8086/oep/",    
     image: smartTechImg
   },
   {
@@ -78,10 +79,30 @@ const PROJECTS = [
       "React Icons",
       "Vite"
     ],
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://your-portfolio.vercel.app",
+    github: "https://github.com/GurumurthyShivani/GurumurthyShivani-Portfolio",
+    demo: "https://gurumurthy-shivani-portfolio.vercel.app/",
     image: portfolioImg,
-  }
+  },
+  {
+  id: "p5",
+  title: "Netflix Landing Page",
+  features: [
+    "Developed a fully responsive Netflix-inspired landing page with a modern, pixel-perfect user interface.",
+    "Implemented reusable React components, smooth animations, and interactive sections for an engaging user experience.",
+    "Built a responsive hero section, feature highlights, FAQ accordion, and call-to-action optimized for desktop, tablet, and mobile devices."
+  ],
+  stack: [
+    "HTML",
+    "CSS",
+    "React.js",
+    "JavaScript",
+    "Bootstrap",
+    "Vite"
+  ],
+  github: "https://github.com/GurumurthyShivani/Netflix-landingpage",
+  demo: "https://streaming-ui-clone-olive.vercel.app/",
+  image: netflixImg,
+}
 ];
 
 export default PROJECTS;
