@@ -1,63 +1,3 @@
-// import smarttech from '../assets/projects/smarttech.svg.png'
-// import globetrekker from '../assets/projects/globetrekker.svg.png'
-// import aichatbot from '../assets/projects/aichatbot.svg.png'
-
-// // Swap the `image` import above for a real screenshot any time —
-// // e.g. import smarttech from '../assets/projects/smarttech.png'
-
-// export const projects = [
-//   {
-//     name: 'SmartTech',
-//     subtitle: 'E-Commerce Application',
-//     image: smarttech,
-//     features:[
-//     "Responsive Design",
-//     "Destination Search",
-//     "Interactive UI",
-//     "Mobile Friendly"
-//   ],
-//     description:
-//       'A full-stack e-commerce application with customer registration, authentication, cart, wishlist, and order management. Includes an admin dashboard with CRUD operations, an Oracle SQL database integrated via JDBC, and MVC architecture throughout.',
-//     tech: ['Java', 'JDBC', 'JSP', 'Servlets', 'HTML', 'CSS', 'Bootstrap', 'Oracle SQL', 'Apache Tomcat'],
-//     github: 'https://github.com/GurumurthyShivani',
-//     live: '#',
-//   },
-//   {
-//     name: 'GlobeTrekker',
-//     subtitle: 'Travel Agency — Responsive Website',
-//     image: globetrekker,
-//     features:[
-//     "Responsive Design",
-//     "Destination Search",
-//     "Interactive UI",
-//     "Mobile Friendly"
-//   ],
-//     description:
-//       'A responsive travel agency web app built with reusable React components and a modern Tailwind CSS design, ensuring a seamless experience across mobile and desktop. Deployed on Vercel.',
-//     tech: ['React.js', 'Tailwind CSS'],
-//     github: 'https://github.com/GurumurthyShivani',
-//     live: '#',
-//   },
-//   {
-//     name: 'AI ChatBot',
-//     subtitle: 'Real-time Conversational Assistant',
-//     image: aichatbot,
-//     features:[
-//     "Responsive Design",
-//     "Destination Search",
-//     "Interactive UI",
-//     "Mobile Friendly"
-//   ],
-//     description:
-//       'An AI chatbot web app generating real-time responses via Gemini API integration, with a responsive UI and dynamic API handling — no persistent storage required. Frontend hosted on Vercel, backend on Render.',
-//     tech: ['React.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'Gemini API'],
-//     github: 'https://github.com/GurumurthyShivani',
-//     live: '#',
-//   },
-  
-// ]
-
-
 import smartTechImg from "../assets/projects/smarttech.png";
 import globeTrekkerImg from "../assets/projects/globetrekker.png";
 import portfolioImg from "../assets/projects/portfolio.png";
@@ -128,7 +68,7 @@ const PROJECTS = [
     features: [
       "Designed and developed a modern, responsive portfolio to showcase my skills, projects, and experience",
       "Interactive UI with smooth animations, reusable React components, and dark/light mode support",
-      "Integrated contact section, project showcase, and downloadable resume for recruiters"
+      "Integrated contact section, project showcase, and downloadable resume."
     ],
     stack: [
       "React.js",
