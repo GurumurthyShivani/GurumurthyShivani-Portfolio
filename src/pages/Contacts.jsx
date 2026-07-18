@@ -172,7 +172,7 @@ export default function Contact() {
                  }`}
                  style={revealStyle(360)}
                >
-                <p className={`w-full text-center text-sm sm:text-left ${isDark ? "text-slate-400" : "text-slate-600"}`}>Follow me on Social Media</p>
+                <p className={`w-full text-sm sm:text-left lg:text-left md:text-left sm:text-center ${isDark ? "text-slate-400" : "text-slate-600"}`}>Follow me on Social Media</p>
                 <a
                   href="https://www.linkedin.com/in/shivanigurumurthy/"
                   target="_blank"

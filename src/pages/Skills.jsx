@@ -223,7 +223,7 @@ export default function Skills() {
     >
       {/* Heading */}
 
-      <div className="mb-10 sm:mb-12 lg:mb-14 text-center">
+      <div className="mt-38 sm:mt-28 mb-10 sm:mb-12 lg:mb-14 text-center">
   <p
     className={`mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.35em] ${
       isDark ? "text-white" : "text-black"

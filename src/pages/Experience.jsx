@@ -147,7 +147,7 @@ export default function Experience() {
     >
       {/* Heading */}
 
-      <div className="text-center mt-6 sm:mt-8 lg:mt-10">
+      <div className="text-center sm:mt-28 lg:mt-30">
   <p
     className={`mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.35em] ${
       isDark ? "text-white" : "text-black"

@@ -138,7 +138,7 @@ export default function Achievement() {
     >
       {/* Heading */}
 
-       <div className="mb-8 sm:mb-12 lg:mb-14 text-center">
+       <div className="mb-8 lg:mt-28 sm:mt-20 sm:mb-12 lg:mb-14 text-center">
         <p
           className={`mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.35em] ${
             isDark ? "text-white" : "text-black"
