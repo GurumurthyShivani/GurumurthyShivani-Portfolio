@@ -13,37 +13,3 @@ export const experience = [
     ],
   },
 ]
-
-// export const education = [
-//   {
-//     degree: 'B.Tech in Information Technology',
-//     school: 'CVR College of Engineering',
-//     location: 'Hyderabad, Telangana',
-//     period: 'Aug 2019 – Jun 2023',
-//     detail: 'CGPA: 8.38 / 10',
-//   },
-//    {
-//     // Placeholder — replace with your real 12th / Intermediate details
-//     degree: 'Intermediate (MPC)',
-//     school: 'Your Junior College Name',
-//     location: 'Hyderabad, Telangana',
-//     period: '2017 – 2019',
-//     detail: 'Percentage: XX%',
-//   },
-//    {
-//     // Placeholder — replace with your real 10th / SSC details
-//     degree: '10th Class (SSC)',
-//     school: 'Your School Name',
-//     location: 'Hyderabad, Telangana',
-//     period: '2016 – 2017',
-//     detail: 'Percentage: XX%',
-//   },
-// ]
-
-// export const achievements = [
-//   {
-//     title: 'Full Stack Java Development Certification',
-//     issuer: 'Naresh IT',
-//     link: '#', // replace with your certificate link
-//   },
-// ]
